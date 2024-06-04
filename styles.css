@@ -1,3 +1,8 @@
+:root {
+    --nav-background: blue;
+
+}
+
 
 * {
     margin: 0;
@@ -7,5 +12,84 @@
     text-decoration: none;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+/* Header */
+
+header {
+    grid-column: 2 / 3;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row: 1fr 1fr;
+}
 
 
+
+/* Nav bar */
+
+nav {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+/* Main */
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 20px;
+}
+
+/* list items */
+.tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tile {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 3fr 1fr;
+    width: minmax(200px, 1fr);
+}
+
+.tile .text {
+    grid-column: 1 / 3;
+}
+
+.actions {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/* Aside items */
+
+aside {
+    display: grid;
+    gap: 20px;
+}
+
+/* Pictures and icons */
+.icon {
+    width: 1.5em;
+}
+
+.logo {
+    width: 3em;
+}
