@@ -1,5 +1,7 @@
 :root {
-    --nav-background: blue;
+    --dark-background: #1992d4;
+    --dark-text: #e2e8f0;
+    --light-background: #fff;
 
 }
 
@@ -10,6 +12,10 @@
     list-style-type: none;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }
 
 html,
@@ -28,15 +34,63 @@ body {
 
 header {
     grid-column: 2 / 3;
-}
-
-.search {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-row: 1fr 1fr;
+    grid-row: repeat(2, 10px);
 }
 
+.searchbar,
+.profile {
+    display: grid;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
 
+.profile > .image-text {
+    gap: 20px;
+}
+
+.profile-statement > div {
+    font-weight: bold;
+}
+
+.profile-ats {
+    font-size: 1.25em;
+}
+
+input {
+    flex: 1;
+    padding: 0.5em 10px; 
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.account,
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: right;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.account > .image-text {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-wrap: nowrap;
+    grid-column: 3/4;
+}
+
+.account > img {
+    grid-column: 2 /3;
+}
+
+button {
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 600;
+}
 
 /* Nav bar */
 
@@ -57,6 +111,7 @@ nav {
 }
 
 
+
 /* Main */
 
 .main {
@@ -64,6 +119,7 @@ nav {
     grid-template-columns: 3fr 1fr;
     padding: 20px;
     gap: 20px;
+    background-color: #94a1b0;
 }
 
 /* list items */
@@ -96,6 +152,8 @@ nav {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
 }
 
 /* Aside items */
@@ -126,4 +184,19 @@ aside {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+
+/* Shared Colors */
+
+header,
+.tile,
+.updates,
+.people {
+    background-color: var(--light-background);
+}
+
+nav,
+button {
+    background-color: var(--dark-background);
 }
