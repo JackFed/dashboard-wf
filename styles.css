@@ -43,7 +43,19 @@ header {
 nav {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
+
+.navbar,
+.settings {
+    display: grid;
+    gap: 10px;
+}
+
 
 /* Main */
 
@@ -51,6 +63,7 @@ nav {
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 20px;
+    gap: 20px;
 }
 
 /* list items */
@@ -66,7 +79,11 @@ nav {
     gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-row: 3fr 1fr;
+
     width: minmax(200px, 1fr);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 .tile .text {
@@ -76,6 +93,9 @@ nav {
 .actions {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Aside items */
@@ -86,10 +106,24 @@ aside {
 }
 
 /* Pictures and icons */
+.profile-icon {
+    border-radius: 50%;
+    width: 4em;
+}
+
 .icon {
     width: 1.5em;
 }
 
-.logo {
+.logo,
+.profile-icon.mini {
     width: 3em;
+}
+
+.image-text,
+.nav-item,
+.dash-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
